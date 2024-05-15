@@ -1,0 +1,191 @@
+@use "./reset";
+//fonts
+@font-face {
+  src: url(../assets/fonts/RedHatDisplay-Black.ttf);
+  font-family: "RedHatDisplay-Black";
+  font-style: normal;
+}
+@font-face {
+  src: url(../assets/fonts/RedHatDisplay-Bold.ttf);
+  font-family: "RedHatDisplay-Bold";
+  font-style: normal;
+}
+@font-face {
+  src: url(../assets/fonts/RedHatDisplay-Medium.ttf);
+  font-family: "RedHatDisplay-Medium";
+  font-style: normal;
+}
+//variables
+$clr-husky: #e0e8ff;
+$clr-white: #ffffff;
+$clr-english-manor: #717fa6;
+$clr-violet-glow: #382ae1;
+$clr-lapis-on-neptune: #1e1fcd;
+$clr-pico-void: #1f2e55;
+$clr-ghost-white: #f7f9ff;
+$clr-blue-screen-of-death: #0d30bd;
+$shadow-violet-glow: hsla(245, 75%, 52%, 0.19);
+$shadow-blue-screen-of-death: hsla(228, 87%, 40%, 0.152);
+$font-rhd-black: "RedHatDisplay-Black", sans-serif;
+$font-rhd-bold: "RedHatDisplay-Bold", sans-serif;
+$font-rhd-medium: "RedHatDisplay-Medium", sans-serif;
+//mixins
+@mixin grid {
+  display: grid;
+  grid-template-columns: auto;
+}
+@mixin mobile-landscape {
+  @media (min-width: 30.0625rem) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media (min-width: 64.0625rem) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 80.0625rem) {
+    @content;
+  }
+}
+//global styles
+body {
+  font-family: $font-rhd-medium;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: $clr-english-manor;
+  @include mobile-landscape {
+    font-size: 1rem;
+  }
+}
+.container {
+  width: min(100%, 90rem);
+  margin-inline: auto;
+  &--hero {
+    width: min(100%, 23.4375rem);
+    @include mobile-landscape {
+      width: min(100%, 28.125rem);
+    }
+  }
+}
+// section hero
+.hero {
+  //   min-height: 100vh;
+  padding: 4.4375rem 1.5rem;
+  //   display: grid;
+  //   place-content: center;
+  background: {
+    color: $clr-husky;
+    image: url(../assets/images/pattern-background-mobile.svg);
+    repeat: no-repeat;
+    size: 100vw 12.125rem;
+    position: top;
+  }
+  @include laptop {
+    background: {
+      size: 100vw 350px;
+      image: url(../assets/images/pattern-background-desktop.svg);
+    }
+  }
+  @include desktop {
+    background: {
+      size: 100vw 25rem;
+      image: url(../assets/images/pattern-background-desktop.svg);
+    }
+  }
+}
+.card {
+  background-color: $clr-white;
+  border-radius: 1.25rem;
+  box-shadow: 0 2.5rem 2.5rem -1.25rem $shadow-blue-screen-of-death;
+  @include mobile-landscape {
+    border-radius: 0.6875rem;
+  }
+  &__img-top {
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+    @include mobile-landscape {
+      border-top-left-radius: 0.6875rem;
+      border-top-right-radius: 0.6875rem;
+    }
+  }
+  &__body {
+    @include grid;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    @include mobile-landscape {
+      padding: 2.8125rem 3rem;
+    }
+  }
+  &__content {
+    text-align: center;
+    @include grid;
+    gap: 1rem;
+  }
+  &__title {
+    color: $clr-pico-void;
+    font-family: $font-rhd-black;
+    font-size: 1.375rem;
+    @include mobile-landscape {
+      font-size: 1.75rem;
+    }
+  }
+  &__subscription {
+    background-color: $clr-ghost-white;
+    padding: 1rem;
+    border-radius: 0.6875rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: center;
+  }
+  &__plan {
+    font-size: 0.875rem;
+    @include mobile-landscape {
+      font-size: 1rem;
+    }
+  }
+  &__plan-period {
+    font-family: $font-rhd-black;
+    color: $clr-pico-void;
+  }
+  &__plan-price {
+    font-family: $font-rhd-medium;
+    color: $clr-english-manor;
+  }
+  &__plan-switch {
+    font-size: 0.8125rem;
+    font-family: $font-rhd-bold;
+    color: $clr-violet-glow;
+    flex-grow: 1;
+    text-align: right;
+    @include mobile-landscape {
+      font-size: 0.875rem;
+    }
+  }
+  &__btn {
+    &:is(:link, :visited) {
+      font-family: $font-rhd-black;
+      color: $clr-white;
+      padding: 0.9375rem 0;
+      border-radius: 0.6875rem;
+      display: inline-block;
+      box-shadow: 0 1.25rem 1.25rem 0 $shadow-violet-glow;
+      background-color: $clr-violet-glow;
+      text-decoration: none;
+      text-align: center;
+      transition: ease 0.3s;
+    }
+    &:is(:active, :hover) {
+      background-color: $clr-lapis-on-neptune;
+    }
+  }
+  &__cancel-order {
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    font-family: $font-rhd-black;
+    color: $clr-english-manor;
+  }
+}
