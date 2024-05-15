@@ -11,11 +11,21 @@
       <section class="hero">
         <div class="container container--hero">
           <div class="card">
-            <img
-              src="./assets/images/illustration-hero.svg"
-              alt="illustration-hero"
-              class="card__img-top"
-            />
+            <picture>
+              <source
+                media="(min-width: 64.0625rem)"
+                srcset="./assets/images/illustration-hero.svg"
+                width="450"
+                height="220"
+              />
+              <img
+                src="./assets/images/illustration-hero.svg"
+                alt="illustration-hero"
+                width="375"
+                height="183.49"
+                class="card__img-top"
+              />
+            </picture>
             <div class="card__body">
               <div class="card__content">
                 <h1 class="card__title">Order Summary</h1>

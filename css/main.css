@@ -38,16 +38,19 @@ h6 {
   src: url(../assets/fonts/RedHatDisplay-Black.ttf);
   font-family: "RedHatDisplay-Black";
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   src: url(../assets/fonts/RedHatDisplay-Bold.ttf);
   font-family: "RedHatDisplay-Bold";
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   src: url(../assets/fonts/RedHatDisplay-Medium.ttf);
   font-family: "RedHatDisplay-Medium";
   font-style: normal;
+  font-display: swap;
 }
 body {
   font-family: "RedHatDisplay-Medium", sans-serif;
@@ -69,6 +72,11 @@ body {
   width: min(100%, 23.4375rem);
 }
 @media (min-width: 30.0625rem) {
+  .container--hero {
+    width: min(100%, 23.4375rem);
+  }
+}
+@media (min-width: 64.0625rem) {
   .container--hero {
     width: min(100%, 28.125rem);
   }
@@ -143,8 +151,8 @@ body {
   background-color: #f7f9ff;
   padding: 1rem;
   border-radius: 0.6875rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   gap: 1.25rem;
   align-items: center;
 }
@@ -168,8 +176,6 @@ body {
   font-size: 0.8125rem;
   font-family: "RedHatDisplay-Bold", sans-serif;
   color: #382ae1;
-  flex-grow: 1;
-  text-align: right;
 }
 @media (min-width: 30.0625rem) {
   .card__plan-switch {
