@@ -75,22 +75,19 @@ body {
 }
 
 .hero {
+  min-height: 100vh;
   padding: 4.4375rem 1.5rem;
+  display: grid;
+  place-content: center;
   background-color: #e0e8ff;
   background-image: url(../assets/images/pattern-background-mobile.svg);
   background-repeat: no-repeat;
-  background-size: 100vw 12.125rem;
+  background-size: 100vw 18.75rem;
   background-position: top;
 }
 @media (min-width: 64.0625rem) {
   .hero {
-    background-size: 100vw 350px;
-    background-image: url(../assets/images/pattern-background-desktop.svg);
-  }
-}
-@media (min-width: 80.0625rem) {
-  .hero {
-    background-size: 100vw 25rem;
+    background-size: 100vw 400px;
     background-image: url(../assets/images/pattern-background-desktop.svg);
   }
 }

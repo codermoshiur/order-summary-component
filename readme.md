@@ -10,8 +10,8 @@
 
 ### Links
 
-- Live Site URL: []()
-- Solution URL: []()
+- Live Site URL: [https://codermoshiur.github.io/order-summary-component/](https://codermoshiur.github.io/order-summary-component/)
+- Solution URL: [https://www.frontendmentor.io/solutions/order-summary-component-using-sass-oqTwCnjkDf](https://www.frontendmentor.io/solutions/order-summary-component-using-sass-oqTwCnjkDf)
 
 ## My process
 

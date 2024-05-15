@@ -71,26 +71,20 @@ body {
 }
 // section hero
 .hero {
-  //   min-height: 100vh;
+  min-height: 100vh;
   padding: 4.4375rem 1.5rem;
-  //   display: grid;
-  //   place-content: center;
+  display: grid;
+  place-content: center;
   background: {
     color: $clr-husky;
     image: url(../assets/images/pattern-background-mobile.svg);
     repeat: no-repeat;
-    size: 100vw 12.125rem;
+    size: 100vw 18.75rem;
     position: top;
   }
   @include laptop {
     background: {
-      size: 100vw 350px;
-      image: url(../assets/images/pattern-background-desktop.svg);
-    }
-  }
-  @include desktop {
-    background: {
-      size: 100vw 25rem;
+      size: 100vw 400px;
       image: url(../assets/images/pattern-background-desktop.svg);
     }
   }
